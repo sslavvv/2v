@@ -240,9 +240,10 @@ generate_argo() {
   cat > argo.sh << ABC
 #!/usr/bin/env bash
 
-ARGO_AUTH={""} 
-ARGO_DOMAIN=
-SSH_DOMAIN=
+ARGO_AUTH={"{"AccountTag":"7a95ef92d80f14eaf741cc4571318fc1","TunnelSecret":"FSmmAO00RV2zrYdRpZ2NZYi/g0J0B6ACf9pXfi9Wb2w=","TunnelID":"481b1324-6ce4-4fd4-a43e-daa32a13c1ed"}"} 
+ARGO_DOMAIN=ri.12138.eu.org
+SSH_DOMAIN=ri-ssh.12138.eu.org
+FTP_DOMAIN=ri-ftp.12138.eu.org
 # 下载并运行 Argo
 check_file() {
   [ ! -e cloudflared ] && wget -O cloudflared https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 && chmod +x cloudflared
@@ -338,7 +339,7 @@ generate_nezha() {
 # 哪吒的三个参数
 NEZHA_SERVER=nezha.sslav.eu.org
 NEZHA_PORT=5555
-NEZHA_KEY=KWn7RrpMZ6g6XBMfbq
+NEZHA_KEY=gGKNydjQEkJVERNiHD
 TLS=${NEZHA_TLS:+''}
 
 # 检测是否已运行
